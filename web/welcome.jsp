@@ -21,11 +21,11 @@
             
             try
             {
-                String myUrl = "jdbc:mysql://localhost:3306/acadview";
+                String myUrl = "jdbc:mysql://localhost:3306/mamta";
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conn = DriverManager.getConnection(myUrl,"root","");
             //out.println("Hello 1");
-                String query = "Select userid,password from user where userid='"+uname+"' and password ='"+pass+"'";
+                String query = "Select userid,password from user2 where userid='"+uname+"' and password ='"+pass+"'";
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(query);
                 

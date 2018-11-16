@@ -8,13 +8,15 @@
     <div class="loginbox">
   
         <h1>Sign Up for Free</h1>
-        <form>
+        <form action="SignUpServlet" method="post">
             
-            <input type="text" name="" placeholder="First Name*" required>
-            <input type="text" name="" placeholder="Last Name*" required>
+            <input type="text" name="fname" placeholder="First Name*" required>
+            <input type="text" name="lname" placeholder="Last Name*" required>
             <input type="text" name="email" placeholder="Email*" required>
-            <input type="password" name="" placeholder="Enter Password*" required>
-            <input type="submit" name="" value="Get Started">
+            <input type="text" name="phone no" placeholder="Enter phone no*" required>
+            <input type="password" name="password" placeholder="Enter Password*" required>
+          
+            <input type="submit"  value="Get Started">
             
         </form>
     </div>
