@@ -13,7 +13,8 @@ import java.sql.ResultSet;
  */
 public class LoginServlet extends HttpServlet {
 
-    public void processRequest(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException
+    @Override
+    public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException
     {
         res.setContentType("text/html; charset=UTF-8");
        // PrintWriter out=res.getWriter();
@@ -32,7 +33,7 @@ public class LoginServlet extends HttpServlet {
         int flag=0;
         while(rs.next())
         {
-            s1=rs.getString("lname");
+            s1=rs.getString("fname");
             s2=rs.getString("password");
             
             if(username.equals(s1)&&pswd.equals(s2))
