@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-
-import java.io.IOException;
+import static java.awt.event.PaintEvent.UPDATE;
+import java.io.*;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.sql.ResultSet;
 
 /**
  *
@@ -22,57 +17,35 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ForgetPassword extends HttpServlet {
 
- public void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-         PrintWriter out = response.getWriter();   
-           
-             String email = request.getParameter("Email");
-            String phoneno=request.getParameter("phone no");
-           
-             String s1="";
-             String s2="";
-           
-        try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mamta","root","");
-        Statement st=con.createStatement();
-        
-        ResultSet rs= st.executeQuery("Select * from user2");
-        
-        int flag=0;
-        while(rs.next())
-        {
-            s1=rs.getString("email");
-            s2=rs.getString("phone no");
-             
-            
-            if(email.equals(s1)&&phoneno.equals(s2))
-            {
-                out.print("ok verified"+"\n");
-                flag=1;
-           
-              //  response.sendRedirect("test.html");
-                
-            }
-           
-        }
-        }
-        catch (Exception e)
-        {
-            out.print(e);
-                             response.sendRedirect("index.html");
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+        res.setContentType("text/html; charset=UTF-8");
+        //PrintWriter out=res.getWriter();
+        String email = req.getParameter("email");
+        String pass=req.getParameter("pass");
+        String s1 = "";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mamta", "root", "");
+            Statement st = con.createStatement();
 
+            ResultSet rs = st.executeQuery("Select email, password from user2 where email='"+email+"'");
+
+           if(rs.next()) {
+                   String query = "UPDATE user2 SET password = '"+pass+"'  where email='"+email+"'";
+                   int i=st.executeUpdate(query);
+                   res.sendRedirect("index.html");
+                } 
+           else
+           {
+               res.sendRedirect("forget.html");
+           }
+            }
+            
+         catch (ClassNotFoundException | SQLException e) {
+            //out.print(e);
         }
     }
-    public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException
-    {
-        processRequest(req, res) ;
-    }
-    public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException
-    {
-         processRequest(req, res) ;
-        
-    }
-            
-            
-    }
+
+   
+}

@@ -5,8 +5,11 @@
         <group>
             <file>file:/C:/Users/Mamta/Documents/NetBeansProjects/quikrclone1/web/index.html</file>
             <file>file:/C:/Users/Mamta/Documents/NetBeansProjects/quikrclone1/src/java/LoginServlet.java</file>
+            <file>file:/C:/Users/Mamta/Documents/NetBeansProjects/quikrclone1/web/style.css</file>
             <file>file:/C:/Users/Mamta/Documents/NetBeansProjects/quikrclone1/src/java/SignUpServlet.java</file>
+            <file>file:/C:/Users/Mamta/Documents/NetBeansProjects/quikrclone1/src/java/ForgetPassword.java</file>
             <file>file:/C:/Users/Mamta/Documents/NetBeansProjects/quikrclone1/web/signup.html</file>
+            <file>file:/C:/Users/Mamta/Documents/NetBeansProjects/quikrclone1/web/forget.html</file>
         </group>
     </open-files>
 </project-private>
