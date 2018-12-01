@@ -36,14 +36,26 @@ public class LoginServlet extends HttpServlet {
             s1=rs.getString("fname");
             s2=rs.getString("password");
             
+            
             if(username.equals(s1)&&pswd.equals(s2))
             {
-               // out.print("Welcome"+"\n");
                 flag=1;
                 
             }
+            else if(username.equals("mamta") && pswd.equals("admins@123"))
+            {
+                flag=2;
+            }
+            else
+            {
+                
+            }
         }
-            if(flag==1)
+        if(flag==2)
+                    {
+                         res.sendRedirect("index_2.html");
+                    }
+        else if(flag==1)
                     {
                          res.sendRedirect("index_1.html");
                     }
@@ -51,11 +63,12 @@ public class LoginServlet extends HttpServlet {
             {
                  res.sendRedirect("index.html");
             }
+          
         
         }
         catch (IOException | ClassNotFoundException | SQLException e)
         {
-            //out.print(e);
+            
         }
     }
     

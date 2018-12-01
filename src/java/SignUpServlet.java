@@ -56,7 +56,7 @@ public class SignUpServlet extends HttpServlet {
 }
         catch(Exception e)
         {
-        out.println("error!");
+        out.println(e.getMessage());
         }
     }
 

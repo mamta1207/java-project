@@ -1,0 +1,24 @@
+              
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<body>
+    <div class="loginbox">
+        <h1>Upload Your Ad</h1>
+        <form action="UploadServlet" method="post">
+
+            <input type="text" name="prodcutid" placeholder="Product_id*" required>
+            <input type="text" name="catgory" placeholder="category*" required>
+            <input type="text" name="selling price" placeholder="selling price*" required>
+            <input type="text" name="phone no" placeholder="Enter phone no*" required>
+      
+            <input class="input100" type="file" name="image" placeholder="image">
+            <input type="submit"  value="Post an Ad">
+            
+        </form>
+    </div>
+</body>
+</head>
+</html>

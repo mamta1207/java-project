@@ -12,6 +12,10 @@
         <servlet-name>ForgetPassword</servlet-name>
         <servlet-class>ForgetPassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>java</servlet-name>
+        <servlet-class>adminservlet.java</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ForgetPassword</servlet-name>
         <url-pattern>/ForgetPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>java</servlet-name>
+        <url-pattern>/java</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
