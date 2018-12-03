@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
                 flag=1;
                 
             }
-            else if(username.equals("mamta") && pswd.equals("admins@123"))
+            else if(username.equals("mamta") && pswd.equals("admin@123"))
             {
                 flag=2;
             }
